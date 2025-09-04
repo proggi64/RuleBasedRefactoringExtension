@@ -1,0 +1,20 @@
+﻿[
+  {
+    "Type": "RegEx",
+    "Name": "STOFLG",
+    "OldValue": "(\\W)STOFLG_([A-Z_]*)(\\W)",
+    "NewValue": "$1DsStorageConst.STOFLG_$2$3"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "STO",
+    "OldValue": "(\\W)STO_([A-Z_]*)(\\W)",
+    "NewValue": "$1DsStorageConst.STO_$2$3"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceMAX_LEVELS",
+    "OldValue": "(\\W)MAX_LEVELS(\\W)",
+    "NewValue": "$1CDsStorageKey.MAX_OB_LEVELS$2"
+  }
+]

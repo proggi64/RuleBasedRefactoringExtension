@@ -1,0 +1,8 @@
+﻿[
+  {
+    "Type": "RegEx",
+    "Name": "Remove_FUNC_",
+    "OldValue": "^\\s*(?:const|static|constexpr)?\\s+[a-zA-Z]+\\s+_FUNC_\\W(?:.*)$",
+    "NewValue": ""
+  }
+]

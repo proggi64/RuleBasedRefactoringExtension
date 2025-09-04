@@ -1,0 +1,14 @@
+﻿[
+  {
+    "Type": "RegEx",
+    "Name": "ChangeStrlen",
+    "OldValue": "\\Wstrlen\\W",
+    "NewValue": "Str.strlen"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeTcsCmp",
+    "OldValue": "\\W_tcscmp\\W",
+    "NewValue": "Str.strcmp"
+  }
+]

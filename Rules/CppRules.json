@@ -1,0 +1,252 @@
+﻿[
+  {
+    "Type": "SimpleReplace",
+    "Name": "ReplaceNotNot",
+    "OldValue": "!!",
+    "NewValue": "0 != "
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceLong",
+    "OldValue": "(^|\\W)long(\\W)",
+    "NewValue": "$1int$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "_TStringLiteral",
+    "OldValue": "_T\\s*\\(\\s*(\"([^\"\\\\]|\\\\.)*\")\\s*\\)",
+    "NewValue": "$1"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "_TCharLiteral",
+    "OldValue": "_T\\s*\\(\\s*(\"([^'\\\\]|\\\\.)*')\\s*\\)",
+    "NewValue": "$1"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceLPCTSTR",
+    "OldValue": "(^|\\W)LPCTSTR(\\W)",
+    "NewValue": "$1string$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceTCHAR",
+    "OldValue": "(^|\\W)TCHAR(\\W)",
+    "NewValue": "$1char$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceBOOL",
+    "OldValue": "(^|\\W)BOOL(\\W)",
+    "NewValue": "$1bool$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceDWORD",
+    "OldValue": "(^|\\W)DWORD(\\W)",
+    "NewValue": "$1uint$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceWORD",
+    "OldValue": "(^|\\W)WORD(\\W)",
+    "NewValue": "$1ushort$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceSWORD",
+    "OldValue": "(^|\\W)SWORD(\\W)",
+    "NewValue": "$1short$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceLONG",
+    "OldValue": "(^|\\W)LONG(\\W)",
+    "NewValue": "$1int$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceULONG",
+    "OldValue": "(^|\\W)ULONG(\\W)",
+    "NewValue": "$1uint$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceBYTE",
+    "OldValue": "(^|\\W)BYTE(\\W)",
+    "NewValue": "$1byte$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceINT",
+    "OldValue": "(^|\\W)INT(\\W)",
+    "NewValue": "$1int$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceUINT",
+    "OldValue": "(^|\\W)UINT(\\W)",
+    "NewValue": "$1uint$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceLONGLONG",
+    "OldValue": "(^|\\W)LONGLONG(\\W)",
+    "NewValue": "$1long$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceULONGLONG",
+    "OldValue": "(^|\\W)ULONGLONG(\\W)",
+    "NewValue": "$1ulong$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceNULL",
+    "OldValue": "(\\W)NULL(\\W)",
+    "NewValue": "$1null$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceNullptr",
+    "OldValue": "(\\W)nullptr(\\W)",
+    "NewValue": "$1null$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceFALSE",
+    "OldValue": "(\\W)FALSE(\\W)",
+    "NewValue": "$1false$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceTRUE",
+    "OldValue": "(\\W)TRUE(\\W)",
+    "NewValue": "$1true$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceASSERT",
+    "OldValue": "(^|\\W)ASSERT(\\W)",
+    "NewValue": "$1Debug.Assert$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceRUNTIME_CLASS",
+    "OldValue": "(^|\\W)RUNTIME_CLASS\\s*\\(([a-zA-Z_][a-zA-Z0-9_]*)\\)(\\W)",
+    "NewValue": "$1Afx.RUNTIME_CLASS(typeof($2))$3"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceStatic_cast",
+    "OldValue": "(^|\\W)static_cast<(\\w+\\??)>",
+    "NewValue": "$1($2)"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceConst_cast",
+    "OldValue": "(^|\\W)const_cast<(?:\\w+\\??\\*?)>",
+    "NewValue": "$1"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceConstMethod",
+    "OldValue": "(\\W)const(\\W)",
+    "NewValue": "$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceConstValue",
+    "OldValue": "(^|\\W)const(\\W)",
+    "NewValue": "$1"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceConstexpression",
+    "OldValue": "(^|\\W)constexpr(\\W)",
+    "NewValue": "$1const$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceSize_t",
+    "OldValue": "(^|\\W)size_t(\\W)",
+    "NewValue": "$1int$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceLongConst",
+    "OldValue": "\\b((?:0[xX][0-9a-fA-F]+|0[0-7]+|\\d+)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)([uUlLfF]*)\\b",
+    "NewValue": "$1"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "POSITION",
+    "OldValue": "(^|\\W)POSITION(\\W)",
+    "NewValue": "$1POSITION?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeClassRef",
+    "OldValue": "(\\W)(C\\w*)&(\\W)",
+    "NewValue": "$1$2$3"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeSimpleClassInstance",
+    "OldValue": "(^|\\W)(C\\w*)(\\W)(\\w+);",
+    "NewValue": "$1$2$3$4 = new $2()"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangePointerTo",
+    "OldValue": "\\W&([a-zA-Z_][a-zA-Z0-9_]*)(\\W)",
+    "NewValue": "$1$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeScalarTypeRef",
+    "OldValue": "\\W([a-z_][a-z0-9_]*)&(\\W)",
+    "NewValue": "ref $1$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeDelete",
+    "OldValue": "(^|\\W)delete\\s*(?:\\[\\])?\\s*([a-zA-Z_][a-zA-Z0-9_]*)(\\W)",
+    "NewValue": "$1$2 = null$3"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangePointerDecl",
+    "OldValue": "(^|\\W)([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\*(\\W)",
+    "NewValue": "$1$2?$3"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeArrayDecl",
+    "OldValue": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\[\\s*([a-zA-Z_][a-zA-Z0-9_]*|\\d+)\\s*\\]\\s*;",
+    "NewValue": "$1[] $2 = new $1[$3];"
+  },
+  {
+    "Type": "SimpleReplace",
+    "Name": "ChangePointerAccess",
+    "OldValue": "->",
+    "NewValue": "."
+  },
+  {
+    "Type": "RegEx",
+    "Name": "RemoveMethodClassName",
+    "OldValue": "\\b([a-zA-Z_][a-zA-Z0-9_]*)::\\s*",
+    "NewValue": ""
+  },
+  {
+    "Type": "DebugBlock",
+    "Name": "RemoveDebugBlock"
+  },
+  {
+    "Type": "Visibility",
+    "AutoApply": false,
+    "Name": "ConvertVisibility",
+    "MenuText": "Konvertiere public/protected/private"
+  }
+]

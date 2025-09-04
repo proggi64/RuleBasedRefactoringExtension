@@ -1,0 +1,8 @@
+﻿[
+  {
+    "Type": "RegEx",
+    "Name": "ChangeAfxIsValidString",
+    "OldValue": "\\WAfxIsValidString\\W",
+    "NewValue": "Afx.AfxIsValidString"
+  }
+]

@@ -1,0 +1,8 @@
+﻿[
+  {
+    "Type": "RegEx",
+    "Name": "MTVFunction",
+    "OldValue": "(^|\\W)MTV_([A-Z_]+)\\(",
+    "NewValue": "$1MTV.MTV_$2("
+  }
+]
