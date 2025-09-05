@@ -6,6 +6,7 @@ Aktuell wird das Refactoring beim Einfügen von Quelltext aus der Zwischenablage
 - C++-Codesequenz aus dem C++-Editor in die Zwischenablage kopieren
 - In den C#-Zielquelltext wechseln
 - Control und + drücken
+
 Dadurch werden auf den C++-Quelltext vor dem Einfügen die als JSON-Dateien im Rules-Unterverzeichnis definierten Regeln angewandt. s werden alls Regeln in der Reihenfolge ihrer Definition in den JSON-Dateien angewandt. Ausnahme sind Regeln, die das Attribut ```AutoApply = false``` haben. Dazu unten mehr.
 
 ## Regeln definieren
