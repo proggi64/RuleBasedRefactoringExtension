@@ -1,5 +1,5 @@
 # RuleBasedRefactoringExtension
-Erweiterung für Visual Studio 2022, um beim C++ nach C#-Refactoring ARbeitsabläufe zu automatisieren.
+Erweiterung für Visual Studio 2022, um beim C++ nach C#-Refactoring Arbeitsabläufe zu automatisieren.
 
 ## Refactoring beim Einfügen aus Zwischenablage
 Aktuell wird das Refactoring beim Einfügen von Quelltext aus der Zwischenablage durchgeführt. Der Arbeitsablauf ist folgender:
