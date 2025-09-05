@@ -31,6 +31,12 @@
   },
   {
     "Type": "RegEx",
+    "Name": "ReplaceLPTSTR",
+    "OldValue": "(^|\\W)LPTSTR(\\W)",
+    "NewValue": "$1StringBuilder$2"
+  },
+  {
+    "Type": "RegEx",
     "Name": "ReplaceTCHAR",
     "OldValue": "(^|\\W)TCHAR(\\W)",
     "NewValue": "$1char$2"
@@ -58,6 +64,18 @@
     "Name": "ReplaceSWORD",
     "OldValue": "(^|\\W)SWORD(\\W)",
     "NewValue": "$1short$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceSHORT",
+    "OldValue": "(^|\\W)SHORT(\\W)",
+    "NewValue": "$1short$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ReplaceUSHORT",
+    "OldValue": "(^|\\W)USHORT(\\W)",
+    "NewValue": "$1ushort$2"
   },
   {
     "Type": "RegEx",
@@ -133,12 +151,6 @@
   },
   {
     "Type": "RegEx",
-    "Name": "ReplaceRUNTIME_CLASS",
-    "OldValue": "(^|\\W)RUNTIME_CLASS\\s*\\(([a-zA-Z_][a-zA-Z0-9_]*)\\)(\\W)",
-    "NewValue": "$1Afx.RUNTIME_CLASS(typeof($2))$3"
-  },
-  {
-    "Type": "RegEx",
     "Name": "ReplaceStatic_cast",
     "OldValue": "(^|\\W)static_cast<(\\w+\\??)>",
     "NewValue": "$1($2)"
@@ -163,27 +175,21 @@
   },
   {
     "Type": "RegEx",
+    "Name": "ReplaceCONSTValue",
+    "OldValue": "(^|\\W)CONST(\\W)",
+    "NewValue": "$1"
+  },
+  {
+    "Type": "RegEx",
     "Name": "ReplaceConstexpression",
     "OldValue": "(^|\\W)constexpr(\\W)",
     "NewValue": "$1const$2"
   },
   {
     "Type": "RegEx",
-    "Name": "ReplaceSize_t",
-    "OldValue": "(^|\\W)size_t(\\W)",
-    "NewValue": "$1int$2"
-  },
-  {
-    "Type": "RegEx",
     "Name": "ReplaceLongConst",
     "OldValue": "\\b((?:0[xX][0-9a-fA-F]+|0[0-7]+|\\d+)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)([uUlLfF]*)\\b",
     "NewValue": "$1"
-  },
-  {
-    "Type": "RegEx",
-    "Name": "POSITION",
-    "OldValue": "(^|\\W)POSITION(\\W)",
-    "NewValue": "$1POSITION?$2"
   },
   {
     "Type": "RegEx",

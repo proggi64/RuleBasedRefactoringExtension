@@ -1,8 +1,68 @@
 ﻿[
   {
     "Type": "RegEx",
+    "Name": "ReplaceSize_t",
+    "OldValue": "(^|\\W)size_t(\\W)",
+    "NewValue": "$1int$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeAbs",
+    "OldValue": "\\Wabs\\W",
+    "NewValue": "Math.Abs"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeSprintf",
+    "OldValue": "\\Wsprintf\\W",
+    "NewValue": "Str.sprintf"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeSprintfs",
+    "OldValue": "\\Wsprintf_s\\W",
+    "NewValue": "Str.sprintf_s"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeStprintfs",
+    "OldValue": "\\Wstprintf_s\\W",
+    "NewValue": "Str.sprintf_s"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeAtoi",
+    "OldValue": "\\Watoi\\W",
+    "NewValue": "Num.atoi"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeTtoi",
+    "OldValue": "\\W_ttoi\\W",
+    "NewValue": "Num.atoi"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeAtol",
+    "OldValue": "\\Watol\\W",
+    "NewValue": "Num.atoi"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeTtol",
+    "OldValue": "\\W_ttol\\W",
+    "NewValue": "Num.atoi"
+  },
+  {
+    "Type": "RegEx",
     "Name": "ChangeStrlen",
     "OldValue": "\\Wstrlen\\W",
+    "NewValue": "Str.strlen"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeTcslen",
+    "OldValue": "\\W_tcslen\\W",
     "NewValue": "Str.strlen"
   },
   {
@@ -10,5 +70,47 @@
     "Name": "ChangeTcsCmp",
     "OldValue": "\\W_tcscmp\\W",
     "NewValue": "Str.strcmp"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeStrCmp",
+    "OldValue": "\\Wstrcmp\\W",
+    "NewValue": "Str.strcmp"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeTcsCmpi",
+    "OldValue": "\\W_tcscmpi\\W",
+    "NewValue": "Str.stricmp"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeStrCmpi",
+    "OldValue": "\\Wstrcmpi\\W",
+    "NewValue": "Str.stricmp"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeTcsiCmp",
+    "OldValue": "\\W_tcsicmp\\W",
+    "NewValue": "Str.stricmp"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeStriCmp",
+    "OldValue": "\\Wstricmp\\W",
+    "NewValue": "Str.stricmp"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeTcsnCmp",
+    "OldValue": "\\W_tcsncmp\\W",
+    "NewValue": "Str.strncmp"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ChangeStrnCmp",
+    "OldValue": "\\Wstrncmp\\W",
+    "NewValue": "Str.strncmp"
   }
 ]

@@ -1,0 +1,134 @@
+﻿[
+  {
+    "Type": "RegEx",
+    "Name": "HINSTANCE",
+    "OldValue": "(^|\\W)HINSTANCE(\\W)",
+    "NewValue": "$1Assembly?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HMODULE",
+    "OldValue": "(^|\\W)HMODULE(\\W)",
+    "NewValue": "$1Assembly?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HANDLE",
+    "OldValue": "(^|\\W)HANDLE(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HDC",
+    "OldValue": "(^|\\W)HDC(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HMENU",
+    "OldValue": "(^|\\W)HMENU(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HACCEL",
+    "OldValue": "(^|\\W)HACCEL(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HBITMAP",
+    "OldValue": "(^|\\W)HBITMAP(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HBRUSH",
+    "OldValue": "(^|\\W)HBRUSH(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HPEN",
+    "OldValue": "(^|\\W)HPEN(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HFILE",
+    "OldValue": "(^|\\W)HFILE(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HGDIOBJECT",
+    "OldValue": "(^|\\W)HGDIOBJECT(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HFONT",
+    "OldValue": "(^|\\W)HFONT(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "HWND",
+    "OldValue": "(^|\\W)HWND(\\W)",
+    "NewValue": "$1uint?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "WPARAM",
+    "OldValue": "(^|\\W)WPARAM(\\W)",
+    "NewValue": "$1uint$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "LPARAM",
+    "OldValue": "(^|\\W)LPARAM(\\W)",
+    "NewValue": "$1int$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "LRESULT",
+    "OldValue": "(^|\\W)LRESULT(\\W)",
+    "NewValue": "$1int$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "LPVOID",
+    "OldValue": "(^|\\W)LPVOID(\\W)",
+    "NewValue": "$1object?$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "INT_PTR",
+    "OldValue": "(^|\\W)INT_PTR(\\W)",
+    "NewValue": "$1int$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "UINT_PTR",
+    "OldValue": "(^|\\W)UINT_PTR(\\W)",
+    "NewValue": "$1uint$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "LONG_PTR",
+    "OldValue": "(^|\\W)LONG_PTR(\\W)",
+    "NewValue": "$1int$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "ULONG_PTR",
+    "OldValue": "(^|\\W)ULONG_PTR(\\W)",
+    "NewValue": "$1uint$2"
+  },
+  {
+    "Type": "RegEx",
+    "Name": "WINAPI",
+    "OldValue": "(^|\\W)WINAPI(\\W)",
+    "NewValue": "$1"
+  }
+]
