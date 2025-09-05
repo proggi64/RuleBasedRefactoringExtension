@@ -36,6 +36,8 @@ namespace Webkasi.Refactoring.Extension
 
         private readonly RuleSet ruleSet;
 
+        private const int MaxManualRules = 9;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="RulesCommand"/> class.
         /// Adds our command handlers for menu (commands must exist in the command table file)
@@ -68,8 +70,10 @@ namespace Webkasi.Refactoring.Extension
                 };
                 commandService.AddCommand(menuItem);
                 i++;
+                if (i >= MaxManualRules)
+                    break;
             }
-            for (int j = i; j < 10; j++)
+            for (int j = i; j <= MaxManualRules; j++)
             {
                 menuCommandID = new CommandID(CommandSet, DynamicRuleCommandId + j);
                 menuItem = new OleMenuCommand((s, e) => { }, menuCommandID)

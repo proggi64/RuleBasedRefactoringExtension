@@ -56,7 +56,7 @@
         <Parent guid="guidRuleBasedRefactoringExtensionPackageCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Insert and Apply Rules</ButtonText>
+          <ButtonText>Einfügen mit Regeln</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidRuleBasedRefactoringExtensionPackageCmdSet" id="DynamicRuleCommandId1" priority="0x0110" type="Button">
