@@ -201,7 +201,7 @@
     "Type": "RegEx",
     "Name": "ChangeSimpleClassInstance",
     "OldValue": "(^|\\W)(C\\w*)(\\W)(\\w+);",
-    "NewValue": "$1$2$3$4 = new $2()"
+    "NewValue": "$1$2$3$4 = new $2();"
   },
   {
     "Type": "RegEx",
@@ -212,8 +212,8 @@
   {
     "Type": "RegEx",
     "Name": "ChangeScalarTypeRef",
-    "OldValue": "\\W([a-z_][a-z0-9_]*)&(\\W)",
-    "NewValue": "ref $1$2"
+    "OldValue": "(\\W)([a-z_]*)\\s*&(\\W)",
+    "NewValue": "$1ref $2$3"
   },
   {
     "Type": "RegEx",

@@ -137,6 +137,66 @@ public sealed class RuleTest
     }
     #endregion
 
+    #region ReplaceSimpleClassInstance
+    [TestMethod]
+    [DataRow("\tCMyClass myClass;", "\tCMyClass myClass = new CMyClass();")]
+    [DataRow("\tMyClass myClass;", "\tMyClass myClass;")]
+    [DataRow("\tCMyClass myClass; // Test", "\tCMyClass myClass = new CMyClass(); // Test")]
+    public void ReplaceSimpleClassInstance(string toChange, string expected)
+    {
+        string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
+
+    #region ChangeScalarTypeRef
+    [TestMethod]
+    [DataRow("void Test(int& x) {", "void Test(ref int x) {")]
+    [DataRow("void Test(int& x, double& y) {", "void Test(ref int x, ref double y) {")]
+    [DataRow("void Test(int & x, double & y) {", "void Test(ref int x, ref double y) {")]
+    public void ChangeScalarTypeRef(string toChange, string expected)
+    {
+        string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
+
+    #region ChangeDelete
+    [TestMethod]
+    [DataRow("delete[] ptr;", "ptr = null;")]
+    [DataRow("delete ptr;", "ptr = null;")]
+    [DataRow("delete ptr; // Test", "ptr = null; // Test")]
+    [DataRow("\tdelete ptr; // Test", "\tptr = null; // Test")]
+    public void ChangeDelete(string toChange, string expected)
+    {
+        string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
+
+    #region ChangePointerDecl
+    [TestMethod]
+    [DataRow("int* ptr;", "int? ptr;")]
+    [DataRow("CString* ptr;", "CString? ptr;")]
+    [DataRow("void Test(CString* ptr) // test", "void Test(CString? ptr) // test")]
+    public void ChangePointerDecl(string toChange, string expected)
+    {
+        string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
+
+    #region ChangeArrayDecl
+    [TestMethod]
+    [DataRow("int xy[12];", "int[] xy = new int[12];")]
+    [DataRow("\tint xy [12]; // test", "\tint[] xy = new int[12]; // test")]
+    public void ChangeArrayDecl(string toChange, string expected)
+    {
+        string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
+
     #region Helper
     private string Apply(string ruleName, string toChange)
     {
