@@ -44,7 +44,7 @@ Beispiel:
 ```
 Beim "Type" wird der Suffix "Rule" weggelassen. "Name" muss über alle Regeln aller JSON-Dateien eindeutig sein. RegExRule wendet die C#-Methode Regex.Replace an. "OldValue" ist der reguläre Ausdruck, nach dem gesucht wird, "NewValue" der Ausdruck, der als Ersatztext eingesetzt wird. Die Dokumentation der Syntax findet man in der C#-Dokumentation. Eine gute Idee ist der Einsatz einer KI, um die jeweiligen regulären Ausdrücke zu erstellen.
 
-Hintergund: In C++-Quellen wird das _T-Makro eingetzt, um String-Konstanten bei Übersetzung von ANSI- und Unicode-Versionen jeweils an die Enkodierung anzupassen. Diese Makros ```_T("Text")``` müssen in C# entfernt werden.
+Hintergund: In C++-Quellen wird das _T-Makro eingesetzt, um String-Konstanten bei der Übersetzung von ANSI- und Unicode-Versionen jeweils an die Enkodierung anzupassen. Diese Makros ```_T("Text")``` müssen in C# entfernt werden.
 
 ### VisibilityRule
 Anwendung:
