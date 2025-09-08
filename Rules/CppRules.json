@@ -218,13 +218,13 @@
   {
     "Type": "RegEx",
     "Name": "ChangeDelete",
-    "OldValue": "(^|\\W)delete\\s*(?:\\[\\])?\\s*([a-zA-Z_][a-zA-Z0-9_]*)(\\W)",
+    "OldValue": "(\\W)?delete\\s*(?:\\[\\])?\\s*([a-zA-Z_][a-zA-Z0-9_]*)(\\W)",
     "NewValue": "$1$2 = null$3"
   },
   {
     "Type": "RegEx",
     "Name": "ChangePointerDecl",
-    "OldValue": "(^|\\W)([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\*(\\W)",
+    "OldValue": "(\\W)?([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\*(\\W)",
     "NewValue": "$1$2?$3"
   },
   {

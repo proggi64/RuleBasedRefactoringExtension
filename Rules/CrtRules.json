@@ -74,7 +74,7 @@
   {
     "Type": "RegEx",
     "Name": "ChangeStrCmp",
-    "OldValue": "(\\W)strcmp(\\W)",
+    "OldValue": "(\\W)(?<!\\.)strcmp(\\W)",
     "NewValue": "$1Str.strcmp$2"
   },
   {
@@ -98,7 +98,7 @@
   {
     "Type": "RegEx",
     "Name": "ChangeStriCmp",
-    "OldValue": "(\\W)stricmp(\\W)",
+    "OldValue": "(\\W)(?<!\\.)stricmp(\\W)",
     "NewValue": "$1Str.stricmp$2"
   },
   {
@@ -110,7 +110,7 @@
   {
     "Type": "RegEx",
     "Name": "ChangeStrnCmp",
-    "OldValue": "(\\W)strncmp(\\W)",
+    "OldValue": "(\\W)(?<!\\.)strncmp(\\W)",
     "NewValue": "$1Str.strncmp$2"
   }
 ]
