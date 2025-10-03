@@ -27,6 +27,21 @@ public sealed class CPPRuleTest : RuleTest
     }
     #endregion
 
+    #region RemoveDebugBlock
+    [TestMethod]
+    [DataRow("x = 1;\r\n#ifdef DEBUG\r\nCall();\r\n#endif\r\ny = 2;", "x = 1;\r\ny = 2;")]
+    [DataRow("x = 1;\r\n#ifdef _DEBUG\r\nCall();\r\n#endif\r\ny = 2;", "x = 1;\r\ny = 2;")]
+    [DataRow("x = 1;\r\n#if defined DEBUG\r\nCall();\r\n#endif\r\ny = 2;", "x = 1;\r\ny = 2;")]
+    [DataRow("x = 1;\r\n#if defined _DEBUG\r\nCall();\r\n#endif\r\ny = 2;", "x = 1;\r\ny = 2;")]
+    [DataRow("x = 1;\r\n#if defined _DEBUG\r\n#ifdef XYZ Call();\r\n#endif\r\n#endif\r\ny = 2;", "x = 1;\r\ny = 2;")]
+    [DataRow("x = 1;\r\n#if defined _DEBUG\r\n#if defined XYZ Call();\r\n#endif\r\n#endif\r\ny = 2;", "x = 1;\r\ny = 2;")]
+    public void RemoveDebugBlock(string toChange, string expected)
+    {
+        string result = Apply("RemoveDebugBlock", toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
+
     #region ReplaceStatic_cast
     [TestMethod]
     [DataRow("\tx = static_cast<LPCTSTR>(s);\r\n", "\tx = (string)(s);\r\n")]

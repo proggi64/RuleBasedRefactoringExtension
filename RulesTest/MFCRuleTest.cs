@@ -12,4 +12,14 @@ public sealed class MFCRuleTest : RuleTest
         Assert.AreEqual(expected, result);
     }
     #endregion
+
+    #region ReplaceASSERT_AfxIsValidAddress
+    [TestMethod]
+    [DataRow("\tASSERT(AfxIsValidAddress(p, sizeof (CClass)));\r\n", "\tDebug.Assert(p != null && p is CClass);\r\n")]
+    public void ReplaceASSERT_AfxIsValidAddress(string toChange, string expected)
+    {
+        string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
 }

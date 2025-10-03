@@ -20,9 +20,10 @@ namespace Webkasi.Refactoring.Rules
             foreach (var line in lines)
             {
                 count--;
-                if (line.Contains("#ifdef _DEBUG") || line.Contains("defined _DEBUG"))
+                if (line.Contains("#ifdef _DEBUG") || line.Contains("defined _DEBUG") ||
+                    line.Contains("#ifdef DEBUG") || line.Contains("defined DEBUG"))
                     ifdefLevel++;
-                else if (ifdefLevel > 0 && line.Contains("#ifdef"))
+                else if (ifdefLevel > 0 && (line.Contains("#ifdef") || line.Contains("#if defined")))
                     ifdefLevel++;
                 else if (line.Contains("#endif") && ifdefLevel > 0)
                     ifdefLevel--;
