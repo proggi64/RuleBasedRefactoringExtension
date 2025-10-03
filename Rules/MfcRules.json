@@ -13,6 +13,12 @@
   },
   {
     "Type": "RegEx",
+    "Name": "ReplaceASSERT_AfxIsValidAddress",
+    "OldValue": "(\\W)AfxIsValidAddress\\s*\\(\\s*(\\w+)\\s*,\\s*sizeof\\s*\\(\\s*(\\w+)\\s*\\)\\s*\\)",
+    "NewValue": "($1$2 != null && $2 is $3)"
+  },
+  {
+    "Type": "RegEx",
     "Name": "ChangeAfxIsValidString",
     "OldValue": "\\WAfxIsValidString\\W",
     "NewValue": "Afx.AfxIsValidString"

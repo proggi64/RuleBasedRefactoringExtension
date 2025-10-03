@@ -145,12 +145,6 @@
   },
   {
     "Type": "RegEx",
-    "Name": "ReplaceASSERT_AfxIsValidAddress",
-    "OldValue": "ASSERT\\s*\\(\\s*AfxIsValidAddress\\s*\\(\\s*(\\w+)\\s*,\\s*sizeof\\s*\\(\\s*(\\w+)\\s*\\)\\s*\\)\\s*\\)\\s*;",
-    "NewValue": "Debug.Assert($1 != null && $1 is $2);"
-  },
-  {
-    "Type": "RegEx",
     "Name": "ReplaceASSERT",
     "OldValue": "(^|\\W)ASSERT(\\W)",
     "NewValue": "$1Debug.Assert$2"
