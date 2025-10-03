@@ -111,6 +111,17 @@ public sealed class CPPRuleTest : RuleTest
     }
     #endregion
 
+    #region ChangePointerAccess
+    [TestMethod]
+    [DataRow("ptr->CallTest();", "ptr.CallTest();")]
+    [DataRow("x = ptr1->ptr2->m_str;", "x = ptr1.ptr2.m_str;")]
+    public void ChangePointerAccess(string toChange, string expected)
+    {
+        string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
+
     #region ChangeArrayDecl
     [TestMethod]
     [DataRow("int xy[12];", "int[] xy = new int[12];")]
@@ -120,6 +131,28 @@ public sealed class CPPRuleTest : RuleTest
     public void ChangeArrayDecl(string toChange, string expected)
     {
         string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
+
+    #region ConvertVisibility
+    [TestMethod]
+    [DataRow(
+        "protected:\r\nvoid Test1();\r\nvoid Test2();", 
+        "protected void Test1()\r\n{ throw new NotImplementedException(); }\r\nprotected void Test2()\r\n{ throw new NotImplementedException(); }")]
+    [DataRow(
+        "protected:\r\nvoid Test1(\r\n\tint x\r\n);\r\nvoid Test2(\r\n\tint x\r\n\tint y\r\n);",
+        "protected void Test1(\r\n\tint x\r\n)\r\n{ throw new NotImplementedException(); }\r\nprotected void Test2(\r\n\tint x\r\n\tint y\r\n)\r\n{ throw new NotImplementedException(); }")]
+    [DataRow(
+        "protected:\r\nvoid Test1();\r\npublic:\r\nvoid Test2();\r\n", 
+        "protected void Test1()\r\n{ throw new NotImplementedException(); }\r\npublic void Test2()\r\n{ throw new NotImplementedException(); }")]
+    [DataRow(
+        "void Test1();\r\npublic:\r\nvoid Test2();\r\n",
+        "private void Test1()\r\n{ throw new NotImplementedException(); }\r\npublic void Test2()\r\n{ throw new NotImplementedException(); }")]
+    public void ConvertVisibility(string toChange, string expected)
+    {
+        // Kein AutoApply!
+        string result = Apply("ConvertVisibility", toChange);
         Assert.AreEqual(expected, result);
     }
     #endregion

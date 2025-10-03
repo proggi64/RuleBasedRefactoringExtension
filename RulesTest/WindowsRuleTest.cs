@@ -65,4 +65,29 @@ public sealed class WindowsRuleTest : RuleTest
         Assert.AreEqual(expected, result);
     }
     #endregion
+
+    #region HDC
+    [TestMethod]
+    [DataRow("HDC x = NULL;", "uint? x = null;")]
+    [DataRow("void Func(HDC handle) {", "void Func(uint? handle) {")]
+    [DataRow("\tvoid Func(HDC handle, int i) {\r\n", "\tvoid Func(uint? handle, int i) {\r\n")]
+    [DataRow("a = 10;\r\n\tvoid Func(HDC handle, int i) {\r\n", "a = 10;\r\n\tvoid Func(uint? handle, int i) {\r\n")]
+    public void HDCApplyAll(string toChange, string expected)
+    {
+        string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
+
+    #region WINAPI
+    [TestMethod]
+    [DataRow("void WINAPI Func(HDC handle) {", "void Func(uint? handle) {")]
+    [DataRow("\tvoid WINAPI Func(HDC handle, int i) {\r\n", "\tvoid Func(uint? handle, int i) {\r\n")]
+    [DataRow("a = 10;\r\n\tvoid WINAPI Func(HDC handle, int i) {\r\n", "a = 10;\r\n\tvoid Func(uint? handle, int i) {\r\n")]
+    public void WINAPIApplyAll(string toChange, string expected)
+    {
+        string result = Apply(toChange);
+        Assert.AreEqual(expected, result);
+    }
+    #endregion
 }
